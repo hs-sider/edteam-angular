@@ -1,7 +1,7 @@
 <h3>Input Basicos</h3>
 <div>
   <mat-form-field>
-    <input matInput type="text" placeholder="Nombre">
+    <input matInput type="text" placeholder="Nombre" [value]="usuario.nombre">
   </mat-form-field>
 </div>
 
@@ -22,3 +22,11 @@
     </mat-form-field>
   </div>
 </h3>
+
+<h3>Event Binding</h3>
+<div>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Nombre" [value]="usuario.nombre"
+    (keyup)="onKeyUp($event)" (blur)="onBlur($event)">
+  </mat-form-field>
+</div>

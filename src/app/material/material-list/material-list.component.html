@@ -1,18 +1,16 @@
 
+<p>Lista version 1</p>
 <mat-list>
-  <mat-list-item>
-    <img mat-line mat-list-avatar src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
-    <span mat-line>{{estudiante1.nombre}}</span>
-    <span mat-line>{{estudiante1.ciudad}}</span>
+  <mat-list-item *ngFor="let estudiante of listaEstudiantes">
+    <img *ngIf="estudiante.fotoURL" mat-line mat-list-avatar [src]="estudiante.fotoURL" alt="">
+    <img *ngIf="!estudiante.fotoURL" mat-line mat-list-avatar [src]="DEFAULT_PICTURE" alt="">
+    <span mat-line>{{estudiante.nombre}}</span>
+    <span mat-line>{{estudiante.ciudad}}</span>
   </mat-list-item>
-  <mat-list-item>
-    <img mat-line mat-list-avatar src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
-    <span mat-line>{{estudiante2.nombre}}</span>
-    <span mat-line>{{estudiante2.ciudad}}</span>
-  </mat-list-item>
-  <mat-list-item>
-    <img mat-line mat-list-avatar src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
-    <span mat-line>{{estudiante3.nombre}}</span>
-    <span mat-line>{{estudiante3.ciudad}}</span>
-  </mat-list-item>
+</mat-list>
+
+<p>Lista version 2</p>
+<mat-list>
+  <ed-item-estudiante *ngFor="let est of listaEstudiantes" [estudiante]="est" (onMouseClick)="onMouseClick($event)">
+  </ed-item-estudiante>
 </mat-list>

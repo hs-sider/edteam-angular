@@ -10,8 +10,8 @@
 
 <h3>Botones con elevacion</h3>
 <div>
-  <button mat-raised-button>Basico</button>
-  <button mat-raised-button color="primary">Primario Basico</button>
+  <button mat-raised-button [disabled]="!formulario.valido">Basico</button>
+  <button mat-raised-button [disabled]="!formulario.valido" color="primary" disabled="true">Primario Basico</button>
 </div>
 
 <h3>Botones con Iconos</h3>
@@ -37,6 +37,17 @@
   <button mat-fab color="primary">
     <mat-icon>
       add
+    </mat-icon>
+  </button>
+</div>
+  <h3>Botones con Iconos (Capturando eventos - Event Binding)</h3>
+<div>
+  <button>
+    <mat-icon (click)="onClick($event)">grade</mat-icon>
+  </button>
+  <button mat-fab (click)='onClick($event)'>
+    <mat-icon>
+      grade
     </mat-icon>
   </button>
 </div>
