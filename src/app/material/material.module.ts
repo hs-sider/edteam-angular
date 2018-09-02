@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatExpansionModule, MatInputModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatExpansionModule,
+  MatInputModule, MatListModule, MatCardModule } from '@angular/material';
 
 import { MaterialDemoComponent } from './material-demo/material-demo.component';
 import { MaterialButtonComponent } from './material-button/material-button.component';
@@ -16,7 +17,8 @@ import { ItemEstudianteComponent } from './material-list/item-estudiante/item-es
     MatIconModule,
     MatExpansionModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
 
   ],
   exports: [
@@ -25,7 +27,8 @@ import { ItemEstudianteComponent } from './material-list/item-estudiante/item-es
     MatIconModule,
     MatExpansionModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   declarations: [MaterialDemoComponent, MaterialButtonComponent, MaterialInputComponent, MaterialListComponent, ItemEstudianteComponent]
 })
