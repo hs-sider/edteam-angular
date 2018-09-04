@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" *ngIf="apod">
   <mat-card class="card-content">
     <h3>Astronomy Picture of the Day</h3>
     <mat-card-header>
@@ -20,6 +20,16 @@
   </mat-card>
 </div>
 
+<div *ngIf="!apod && !error">
+  <mat-spinner class="card-content">
+  </mat-spinner>
+</div>
+
+<div *ngIf="error">
+  <mat-card class="cart-content">
+    {{error}}
+  </mat-card>
+</div>
 <!-- <div>
   Sin pipe: {{apod.title}}
   Con pipe: {{apod.title | lowerCase}}

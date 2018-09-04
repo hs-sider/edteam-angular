@@ -9,6 +9,8 @@ import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
 import { NasaApiService } from './shared/services/nasa-api.service';
 import { LowerCasePipe } from './shared/pipes/lower-case.pipe';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/http'; // Obsoleto
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { LowerCasePipe } from './shared/pipes/lower-case.pipe';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [NasaApiService],
   bootstrap: [AppComponent]

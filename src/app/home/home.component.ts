@@ -11,18 +11,33 @@ export class HomeComponent implements OnInit {
 
   apod: Apod;
 
-  // ** Estilo sin Inyeccion de dependencia
+  error: string;
+
+  // ** Estilo SIN Inyeccion de dependencia
   // private nasaApi: NasaApiService;
   // constructor(nasaApi: NasaApiService) {
   //   this.nasaApi = nasaApi;
   // }
 
-  // ** Estilo son inyeccion de dependencias
+  // ** Estilo CON inyeccion de dependencias
   constructor(private nasaApi: NasaApiService) { }
 
   ngOnInit() {
 
-    this.apod = this.nasaApi.getApod();
+    this.nasaApi.getApod()
+      .subscribe(data => {
+        // setTimeout(() => {
+          this.apod = data;
+        // }, 1500);
+      }, error => {
+        setTimeout(() => {
+          console.log('Error al conectar con el servidor');
+          this.error = 'Error al conectar con el servidor';
+        }, 2000);
+      });
+
+    // this.apod = this.nasaApi.getApod();
+
     // this.apod = {
     //   date: '2017-11-08',
     //   title: 'NGC Hubble\'s variable nebula',
@@ -34,4 +49,10 @@ export class HomeComponent implements OnInit {
     // };
   }
 
+  // ejemploObservable() {
+  //   Rx.Observable.from(['one', 'two', 'three'])
+  //     .take(2)
+  //     .map(function(s) { s + ' : on ' + new Date()})
+  //     .subscribe(function(s) { console.log(s); });
+  // }
 }
