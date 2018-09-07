@@ -25,8 +25,12 @@
 
 <h3>Event Binding</h3>
 <div>
+   <!-- [(value)]="usuario.nombre" -->
   <mat-form-field>
-    <input matInput type="text" placeholder="Nombre" [value]="usuario.nombre"
+    <input matInput type="text" placeholder="Nombre" [(ngModel)] = "usuario.nombre"
     (keyup)="onKeyUp($event)" (blur)="onBlur($event)">
   </mat-form-field>
 </div>
+<pre>
+  {{usuario | json}}
+</pre>

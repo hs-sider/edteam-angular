@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatExpansionModule,
-  MatInputModule, MatListModule, MatCardModule, MatProgressSpinnerModule } from '@angular/material';
+  MatInputModule, MatListModule, MatCardModule, MatProgressSpinnerModule, MatSelectModule } from '@angular/material';
 
 import { MaterialDemoComponent } from './material-demo/material-demo.component';
 import { MaterialButtonComponent } from './material-button/material-button.component';
 import { MaterialInputComponent } from './material-input/material-input.component';
 import { MaterialListComponent } from './material-list/material-list.component';
 import { ItemEstudianteComponent } from './material-list/item-estudiante/item-estudiante.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -19,8 +20,9 @@ import { ItemEstudianteComponent } from './material-list/item-estudiante/item-es
     MatInputModule,
     MatListModule,
     MatCardModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    FormsModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,
@@ -30,7 +32,8 @@ import { ItemEstudianteComponent } from './material-list/item-estudiante/item-es
     MatInputModule,
     MatListModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
   declarations: [MaterialDemoComponent, MaterialButtonComponent, MaterialInputComponent, MaterialListComponent, ItemEstudianteComponent]
 })

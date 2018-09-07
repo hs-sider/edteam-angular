@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 const APOD_URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = 'DEMO_KEY';
 
+const MARS_URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000';
+
 @Injectable()
 export class NasaApiService {
 
@@ -26,5 +28,9 @@ export class NasaApiService {
     // return this.DATA;
     // return this.httpClient.get<Apod>(APOD_URL + '?api_key=' + API_KEY);
     return this.httpClient.get<Apod>(`${APOD_URL}?api_key=${API_KEY}`); // Uso de Template Literals
+  }
+
+  getMarsImages(camara: string): Observable<any> {
+    return this.httpClient.get(`${MARS_URL}&api_key=${API_KEY}&camera=${camara}`);
   }
 }
